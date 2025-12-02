@@ -10,25 +10,24 @@
 ---
 
 ## 📋 Executive Summary
-The primary objective of this project is to develop a predictive classification model to estimate the probability of **high-severity injuries** in traffic accidents. Accurately forecasting severity is critical for emergency response teams to prioritize resource allocation and for city planners to identify high-risk infrastructure.
+The primary objective of this project is **to analyze historical traffic accident data** to identify the primary conditions, temporal factors, and causal elements contributing to crash occurrence and injury severity.
 
-Using a dataset of over 180,000 traffic records, this project moves from rigorous Exploratory Data Analysis (EDA) to Feature Engineering (removing data leakage) and Machine Learning (Logistic Regression), achieving a **Recall of 96%** for severe cases.
+The ultimate goal is to generate **actionable insights for transportation safety officials**, enabling evidence-based decision-making to mitigate future traffic risks and fatalities.
 
-**Target Variable Distribution (Class Imbalance):**
-![Severity Distribution](Images/Image 5.png)
-*The dataset is heavily imbalanced, with severe injuries representing a minority of cases, necessitating specialized sampling techniques.*
+While the core focus is diagnostic analysis, a **baseline predictive model** was utilized as a statistical tool to quantify the relative weight of identified risk factors and validate the significance of the findings.
 
 ---
 
 ## 💡 Key Intelligence Insights
-Based on the analysis, we identified the specific factors that increase or decrease the risk of severe injury. The Logistic Regression coefficients allow us to see the **direction** of the impact:
+Based on the analysis, we identified the specific factors that influence the risk of severe injury. The analysis highlights which variables have the strongest correlation with accident severity:
 
-![Direction of Risk](Images/LR.png)
+![Top Factors](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Top%2020%20Factors.png)
 
 **Actionable Takeaways:**
-1.  **Intersections are the Kill Zone:** A staggering **95.2%** of all recorded accidents occur at intersections.
-2.  **Vulnerable Users:** The presence of **Pedestrians** and **Cyclists** (Bars to the right in the chart above) drastically increases the probability of severe injury.
-3.  **The "Clear Weather" Paradox:** Contrary to popular belief, **79%** of crashes occur in clear weather. This isolates **human error** (distraction, aggression) as the primary cause.
+1.  **The "Ideal Conditions" Paradox:** Over **79% of accidents occur in clear weather** and on dry roads. External factors like rain, snow, or road defects are negligible contributors. The primary risk factor is **human behavior** (inattention, aggression) operating under a false sense of security provided by good conditions.
+2.  **Intersections are the Critical Conflict Point:** A staggering **95.2% of crashes are intersection-related**, primarily occurring on straight, level roads controlled by traffic signals. The infrastructure itself is stable, but the complex decision-making required at crossings is where drivers consistently fail.
+3.  **Vulnerable Users Drive Severity:** While the vast majority of accidents (74%) result in no injuries (property damage only), the **severity skyrockets** when pedestrians (+0.33 correlation) or cyclists (+0.19 correlation) are involved. These are the single strongest predictors of critical outcomes.
+4.  **Temporal Predictability:** Risk is highly predictable, peaking during the **evening rush hour (15:00–18:00)** and on **Fridays**. This correlates strongly with commuter fatigue and traffic density rather than random chance.
 
 ---
 
@@ -39,25 +38,25 @@ We utilized **Seaborn** and **Matplotlib** to uncover patterns across multiple d
 
 #### A. Temporal Analysis: When do crashes happen?
 Analysis reveals a distinct peak during the evening rush hour (3 PM - 6 PM) and on Fridays, suggesting commuter fatigue is a major factor.
-![Temporal Features](Images/Image 1.png)
+![Temporal Features](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%201.png)
 
 #### B. Infrastructure & Location
 The data confirms that road geometry is rarely the issue (most roads are straight and level). The danger lies in **Traffic Control Devices** (signals/stop signs) where conflict points exist.
-![Infrastructure](Images/Image 3.png)
+![Infrastructure](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%203.png)
 
 #### C. Environmental Conditions
 Most accidents occur under "ideal" conditions (Clear weather, Dry roads, Daylight), indicating that drivers may lower their guard when the environment seems safe.
-![Environmental Conditions](Images/Image 2.png)
+![Environmental Conditions](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%202.png)
 
 #### D. Crash Mechanics
 "Turning" and "Angle" collisions are the most common types, reinforcing the finding that intersections are the primary hazard zones.
-![Crash Mechanics](Images/Image 4.png)
+![Crash Mechanics](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%204.png)
 
 ### 2. Feature Engineering & Selection
 To handle the high dimensionality of the data, we performed One-Hot Encoding and filtered features based on their correlation with the target variable.
 
 **Top 20 Features by Correlation:**
-![Feature Selection](Images/20_factors.png)
+![Feature Selection](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Top%2020%20Factors.png)
 *We removed post-crash variables (like 'Ambulance Required') to prevent Data Leakage.*
 
 ---
