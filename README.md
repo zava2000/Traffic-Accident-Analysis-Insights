@@ -62,11 +62,11 @@ A **baseline predictive model** was developed to quantify the strength of identi
 ## 🕓 Temporal Patterns — When Do Crashes Happen?  
 ![Temporal Features](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%201.png)
 
-## 🏗️ Infrastructure & Location  
-![Infrastructure](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%203.png)
-
 ## 🌤️ Environmental Conditions  
 ![Environmental Conditions](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%202.png)
+
+## 🏗️ Infrastructure & Location  
+![Infrastructure](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%203.png)
 
 ## 🔧 Crash Mechanics  
 ![Crash Mechanics](https://github.com/zava2000/Traffic-Accident-Analysis-Insights/blob/main/Images/Image%204.png)
